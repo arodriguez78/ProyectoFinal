@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Título de tu Página</title>
+    <!-- Enlaces a las hojas de estilos CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.18.3/dist/css/uikit.min.css"/>
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.18.3/dist/js/uikit.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.18.3/dist/js/uikit-icons.min.js"></script>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- Cabecera -->
+    <header>
+      <nav>
+        <!-- Menú Hamburguesa -->
+        <button id="toggleNav">Menú</button>
+        <!-- Logo y Título -->
+        <div class="logo">Logo</div>
+        <h1>Título de tu Página</h1>
+      </nav>
+    </header>
+
+    <!-- Offcanvas para menú -->
+    <aside id="offcanvas" class="offcanvas">
+      <!-- Contenido del offcanvas -->
+      <ul>
+        <!-- Opciones del menú -->
+        <li><a href="#">Opción 1</a></li>
+        <li><a href="#">Opción 2</a></li>
+        <!-- ... -->
+      </ul>
+    </aside>
+
+    <!-- Listado de Cards Paginados -->
+    <section id="cardsSection">
+      <!-- Aquí se generará el listado de cards -->
+    </section>
+
+    <!-- Gráficas -->
+    <section id="chartsSection">
+      <!-- Gráfica de Barras -->
+      <div id="barChart" style="width: 100%; height: 400px"></div>
+      <!-- Gráfica de Tarta -->
+      <div id="pieChart" style="width: 100%; height: 400px"></div>
+    </section>
+
+    <!-- Enlaces a los scripts JS -->
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
