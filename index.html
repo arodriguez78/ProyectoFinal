@@ -1,77 +1,71 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tu Página Web</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>IMBDn't</title>
     <!-- Enlaces a los estilos de UIKit -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.7.3/css/uikit.min.css" />
-    <script src="script.js"></script>
-</head>
-<body>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.7.3/css/uikit.min.css"
+    />
+  </head>
+  <body>
     <!-- Cabecera -->
     <header class="uk-background-primary uk-light" uk-sticky>
-        <nav class="uk-navbar">
-            <!-- Logo -->
-            <div class="uk-navbar-left">
-                <a class="uk-navbar-item uk-logo" href="#">Logo</a>
-            </div>
-            <!-- Título -->
-            <div class="uk-navbar-center">
-                <h1 class="uk-navbar-item uk-heading-medium">IMBD'nt</h1>
-            </div>
-            <!-- Menú Hamburguesa -->
-            <div class="uk-navbar-right">
-                <button class="uk-navbar-toggle" uk-toggle="target: #offcanvas-nav">
-                    <span uk-navbar-toggle-icon></span> 
-                    <span class="uk-margin-small-left">Menú</span>
-                </button>
-            </div>
-        </nav>
+      <nav class="uk-navbar">
+        <!-- Logo -->
+        <div class="uk-navbar-left">
+          <a class="uk-navbar-item uk-logo" href="#">Logo</a>
+        </div>
+        <!-- Título -->
+        <div class="uk-navbar-center">
+          <h1 class="uk-navbar-item uk-heading-medium">Tu Página Web</h1>
+        </div>
+        <!-- Menú Hamburguesa -->
+        <div class="uk-navbar-right">
+          <button class="uk-navbar-toggle" uk-toggle="target: #offcanvas-nav">
+            <span uk-navbar-toggle-icon></span>
+            <span class="uk-margin-small-left">Menú</span>
+          </button>
+        </div>
+      </nav>
     </header>
 
     <!-- Offcanvas para el menú -->
     <div id="offcanvas-nav" uk-offcanvas>
-        <div class="uk-offcanvas-bar uk-background-secondary">
-            <button class="uk-offcanvas-close" type="button" uk-close></button>
-            <!-- Lista de opciones del menú -->
-            <ul class="uk-nav uk-nav-primary">
-                <li><a href="#peliculas">Lista de Películas</a></li>
-                <li><a href="#grafico-barra">Gráfico de Barras</a></li>
-                <li><a href="#grafico-tarta">Gráfico de Tarta</a></li>
-            </ul>
-        </div>
+      <div class="uk-offcanvas-bar uk-background-secondary">
+        <button class="uk-offcanvas-close" type="button" uk-close></button>
+        <!-- Lista de opciones del menú -->
+        <ul class="uk-nav uk-nav-primary">
+          <li><a href="#peliculas">Lista de Películas</a></li>
+          <li><a href="barraGrafica.html">Gráfico de Barras</a></li>
+          <li><a href="tartaGrafica.html">Gráfico de Tarta</a></li>
+        </ul>
+      </div>
     </div>
 
     <!-- Contenido principal -->
     <main class="uk-container uk-margin-top">
-        <!-- Aquí se mostrará el contenido de acuerdo a la opción seleccionada del menú -->
-        <section id="peliculas">
-          <!-- Contenedor para las cards de películas -->
-          <div id="peliculasContainer" class="uk-child-width-1-3@s uk-child-width-1-4@m uk-grid-match" uk-grid>
-              <!-- Las cards de las películas se generan dinámicamente aquí -->
-          </div>
-          <!-- Paginación -->
-          <ul id="pagination" class="uk-pagination uk-flex-center" uk-margin></ul>
+      <!-- Aquí se mostrará el contenido de acuerdo a la opción seleccionada del menú -->
+      <section id="peliculas">
+        <!-- Contenedor para las cards de películas -->
+        <div
+          id="peliculasContainer"
+          class="uk-child-width-1-3@s uk-child-width-1-4@m uk-grid-match"
+          uk-grid
+        >
+          <!-- Las cards de las películas se generan dinámicamente aquí -->
+        </div>
+        <!-- Paginación -->
+        <ul id="pagination" class="uk-pagination uk-flex-center" uk-margin></ul>
       </section>
-      
-      
-
-        <section id="grafico-barra">
-            <!-- Contenido del gráfico de barras -->
-            <h2 class="uk-heading-medium">Gráfico de Barras</h2>
-            <!-- Aquí se mostrará el gráfico de barras -->
-        </section>
-
-        <section id="grafico-tarta">
-            <!-- Contenido del gráfico de tarta -->
-            <h2 class="uk-heading-medium">Gráfico de Tarta</h2>
-            <!-- Aquí se mostrará el gráfico de tarta -->
-        </section>
     </main>
 
     <!-- Enlaces a los scripts JS de UIKit -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.7.3/js/uikit.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.7.3/js/uikit-icons.min.js"></script>
-</body>
+    <!-- Enlace al script personalizado -->
+    <script src="script.js"></script>
+  </body>
 </html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>IMBDn't</title>
+    <!-- Enlace a los estilos de UIKit -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.7.3/css/uikit.min.css"
+    />
+  </head>
+  <body>
+    <!-- Cabecera -->
+    <header class="uk-background-primary uk-light" uk-sticky>
+      <nav class="uk-navbar">
+        <!-- Logo -->
+        <div class="uk-navbar-left">
+          <a class="uk-navbar-item uk-logo" href="#">Logo</a>
+        </div>
+        <!-- Título -->
+        <div class="uk-navbar-center">
+          <h1 class="uk-navbar-item uk-heading-medium">Tu Página Web</h1>
+        </div>
+        <!-- Menú Hamburguesa -->
+        <div class="uk-navbar-right">
+          <button class="uk-navbar-toggle" uk-toggle="target: #offcanvas-nav">
+            <span uk-navbar-toggle-icon></span>
+            <span class="uk-margin-small-left">Menú</span>
+          </button>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Offcanvas para el menú -->
+    <div id="offcanvas-nav" uk-offcanvas>
+      <div class="uk-offcanvas-bar uk-background-secondary">
+        <button class="uk-offcanvas-close" type="button" uk-close></button>
+        <!-- Lista de opciones del menú -->
+        <ul class="uk-nav uk-nav-primary">
+          <li><a href="index.html#peliculas">Lista de Películas</a></li>
+          <li><a href="barraGrafica.html">Gráfico de Barras</a></li>
+          <li><a href="tartaGrafica.html">Gráfico de Tarta</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Contenido principal -->
+    <main class="uk-container uk-margin-top">
+      <!-- Aquí se mostrará el gráfico de tarta -->
+      <div
+        id="pieChart"
+        style="width: 100%; height: 600px; margin-top: 50px"
+      ></div>
+    </main>
+
+    <!-- Enlace a los scripts de UIKit -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.7.3/js/uikit.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.7.3/js/uikit-icons.min.js"></script>
+    <!-- Enlace al script personalizado con el gráfico de tarta -->
+    <script src="https://cdn.jsdelivr.net/npm/echarts@5.2.2/dist/echarts.min.js"></script>
+
+    <script src="scriptTartaGrafica.js"></script>
+  </body>
+</html>
