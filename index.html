@@ -1,53 +1,77 @@
 <!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Título de tu Página</title>
-    <!-- Enlaces a las hojas de estilos CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.18.3/dist/css/uikit.min.css"/>
-    <script src="https://cdn.jsdelivr.net/npm/uikit@3.18.3/dist/js/uikit.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/uikit@3.18.3/dist/js/uikit-icons.min.js"></script>
-    <link rel="stylesheet" href="styles.css" />
-  </head>
-  <body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tu Página Web</title>
+    <!-- Enlaces a los estilos de UIKit -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.7.3/css/uikit.min.css" />
+    <script src="script.js"></script>
+</head>
+<body>
     <!-- Cabecera -->
-    <header>
-      <nav>
-        <!-- Menú Hamburguesa -->
-        <button id="toggleNav">Menú</button>
-        <!-- Logo y Título -->
-        <div class="logo">Logo</div>
-        <h1>Título de tu Página</h1>
-      </nav>
+    <header class="uk-background-primary uk-light" uk-sticky>
+        <nav class="uk-navbar">
+            <!-- Logo -->
+            <div class="uk-navbar-left">
+                <a class="uk-navbar-item uk-logo" href="#">Logo</a>
+            </div>
+            <!-- Título -->
+            <div class="uk-navbar-center">
+                <h1 class="uk-navbar-item uk-heading-medium">IMBD'nt</h1>
+            </div>
+            <!-- Menú Hamburguesa -->
+            <div class="uk-navbar-right">
+                <button class="uk-navbar-toggle" uk-toggle="target: #offcanvas-nav">
+                    <span uk-navbar-toggle-icon></span> 
+                    <span class="uk-margin-small-left">Menú</span>
+                </button>
+            </div>
+        </nav>
     </header>
 
-    <!-- Offcanvas para menú -->
-    <aside id="offcanvas" class="offcanvas">
-      <!-- Contenido del offcanvas -->
-      <ul>
-        <!-- Opciones del menú -->
-        <li><a href="#">Opción 1</a></li>
-        <li><a href="#">Opción 2</a></li>
-        <!-- ... -->
-      </ul>
-    </aside>
+    <!-- Offcanvas para el menú -->
+    <div id="offcanvas-nav" uk-offcanvas>
+        <div class="uk-offcanvas-bar uk-background-secondary">
+            <button class="uk-offcanvas-close" type="button" uk-close></button>
+            <!-- Lista de opciones del menú -->
+            <ul class="uk-nav uk-nav-primary">
+                <li><a href="#peliculas">Lista de Películas</a></li>
+                <li><a href="#grafico-barra">Gráfico de Barras</a></li>
+                <li><a href="#grafico-tarta">Gráfico de Tarta</a></li>
+            </ul>
+        </div>
+    </div>
 
-    <!-- Listado de Cards Paginados -->
-    <section id="cardsSection">
-      <!-- Aquí se generará el listado de cards -->
-    </section>
+    <!-- Contenido principal -->
+    <main class="uk-container uk-margin-top">
+        <!-- Aquí se mostrará el contenido de acuerdo a la opción seleccionada del menú -->
+        <section id="peliculas">
+          <!-- Contenedor para las cards de películas -->
+          <div id="peliculasContainer" class="uk-child-width-1-3@s uk-child-width-1-4@m uk-grid-match" uk-grid>
+              <!-- Las cards de las películas se generan dinámicamente aquí -->
+          </div>
+          <!-- Paginación -->
+          <ul id="pagination" class="uk-pagination uk-flex-center" uk-margin></ul>
+      </section>
+      
+      
 
-    <!-- Gráficas -->
-    <section id="chartsSection">
-      <!-- Gráfica de Barras -->
-      <div id="barChart" style="width: 100%; height: 400px"></div>
-      <!-- Gráfica de Tarta -->
-      <div id="pieChart" style="width: 100%; height: 400px"></div>
-    </section>
+        <section id="grafico-barra">
+            <!-- Contenido del gráfico de barras -->
+            <h2 class="uk-heading-medium">Gráfico de Barras</h2>
+            <!-- Aquí se mostrará el gráfico de barras -->
+        </section>
 
-    <!-- Enlaces a los scripts JS -->
-    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
-    <script src="script.js"></script>
-  </body>
+        <section id="grafico-tarta">
+            <!-- Contenido del gráfico de tarta -->
+            <h2 class="uk-heading-medium">Gráfico de Tarta</h2>
+            <!-- Aquí se mostrará el gráfico de tarta -->
+        </section>
+    </main>
+
+    <!-- Enlaces a los scripts JS de UIKit -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.7.3/js/uikit.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.7.3/js/uikit-icons.min.js"></script>
+</body>
 </html>
