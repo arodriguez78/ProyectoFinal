@@ -3,8 +3,6 @@ let currentPage = 1;
 const moviesPerPage = 12;
 
 // Función para generar las cards de películas
-// Función para generar las cards de películas
-// Función para generar las cards de películas
 function generateMovieCards(movieData, page) {
     const peliculasContainer = document.getElementById('peliculasContainer');
     peliculasContainer.innerHTML = ''; // Limpiar contenido anterior
@@ -22,7 +20,7 @@ function generateMovieCards(movieData, page) {
         columnDiv.classList.add('uk-width-1-4@s', 'uk-width-1-3@m');
 
         const card = document.createElement('div');
-        card.classList.add('uk-card', 'uk-card-default', 'uk-card-body', 'uk-margin');
+        card.classList.add('uk-card', 'uk-card-default', 'uk-card-body', 'uk-margin', 'movie-card'); // Agregamos la clase 'movie-card'
 
         // Agregar contenido a la tarjeta (imagen, título, director, fecha)
         // Aquí solo se muestra la imagen y el título, el resto se mostrará en el modal
@@ -35,6 +33,11 @@ function generateMovieCards(movieData, page) {
         const title = document.createElement('h3');
         title.textContent = movie.Series_Title;
         card.appendChild(title);
+
+        // Agregar evento de mouseover a la tarjeta para cambiar el cursor
+        card.addEventListener('mouseover', function() {
+            card.style.cursor = 'pointer';
+        });
 
         // Agregar evento de clic a la tarjeta para abrir el modal con la información completa
         card.addEventListener('click', function() {
@@ -74,6 +77,8 @@ function openMovieModal(movie) {
 
 
 
+const pagesToShow = 4; // Número de páginas a mostrar en la paginación
+
 // Función para generar la paginación
 function generatePagination(movieData) {
     const paginationContainer = document.getElementById('pagination');
@@ -82,36 +87,56 @@ function generatePagination(movieData) {
     // Calcular el número total de páginas
     const totalPages = Math.ceil(movieData.length / moviesPerPage);
 
-    // Generar botones de paginación para cada página
-    for (let i = 1; i <= totalPages; i++) {
+    // Calcular el índice de inicio y fin de las páginas a mostrar
+    let startPage = Math.max(1, currentPage - Math.floor(pagesToShow / 2));
+    let endPage = Math.min(totalPages, startPage + pagesToShow - 1);
+
+    // Ajustar el inicio y fin de las páginas para mostrar el número correcto de páginas
+    if (totalPages <= pagesToShow) {
+        startPage = 1;
+        endPage = totalPages;
+    } else if (currentPage <= Math.floor(pagesToShow / 2)) {
+        endPage = pagesToShow;
+    } else if (currentPage + Math.floor(pagesToShow / 2) >= totalPages) {
+        startPage = totalPages - pagesToShow + 1;
+    }
+
+    // Botones de paginación para cada página
+    for (let i = startPage; i <= endPage; i++) {
         const li = document.createElement('li');
         li.innerHTML = `<a href="#">${i}</a>`;
         li.addEventListener('click', function() {
             currentPage = i;
             generateMovieCards(movieData, currentPage);
-            updateActivePage();
+            generatePagination(movieData);
         });
         paginationContainer.appendChild(li);
     }
 
-    // Marcar la página actual como activa
-    updateActivePage();
-}
-
-// Función para marcar la página actual como activa
-function updateActivePage() {
-    const paginationContainer = document.getElementById('pagination');
-    const pages = paginationContainer.querySelectorAll('li');
-    pages.forEach((page, index) => {
-        if (index + 1 === currentPage) {
-            page.classList.add('uk-active');
-        } else {
-            page.classList.remove('uk-active');
+    // Input para ingresar número de página
+    const pageInput = document.createElement('input');
+    pageInput.type = 'number';
+    pageInput.min = 1;
+    pageInput.max = totalPages;
+    pageInput.placeholder = 'Ir a página';
+    pageInput.addEventListener('keypress', function(event) {
+        if (event.key === 'Enter') {
+            const pageNumber = parseInt(pageInput.value);
+            if (pageNumber >= 1 && pageNumber <= totalPages) {
+                currentPage = pageNumber;
+                generateMovieCards(movieData, currentPage);
+                generatePagination(movieData);
+            } else {
+                alert('Número de página fuera de rango.');
+            }
         }
     });
+    paginationContainer.appendChild(pageInput);
 }
 
-// Obtener los datos del JSON
+
+
+// Llamar a la función de generación de la paginación al cargar los datos
 fetch('https://raw.githubusercontent.com/arodriguez78/ProyectoFinal/main/imdb_top_1000.json')
     .then(response => {
         if (!response.ok) {

@@ -9,25 +9,25 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.7.3/css/uikit.min.css"
     />
-    <link rel="icon" href="img/logo.png">
+    <link rel="stylesheet" href="styles.css">
   </head>
-  <body>
+  <body class="uk-background-secondary">
     <!-- Cabecera -->
-    <header class="uk-background-primary uk-light" uk-sticky>
+    <header class="uk-background-primary uk-background-secondary" uk-sticky>
       <nav class="uk-navbar">
         <!-- Logo -->
         <div class="uk-navbar-left">
-          <a class="uk-navbar-item uk-logo" href="#">Logo</a>
+          <a href="index.html" class="uk-navbar-item uk-logo"><img src="img/logo.png" width="100px" alt=""></a>
         </div>
         <!-- Título -->
         <div class="uk-navbar-center">
-          <h1 class="uk-navbar-item uk-heading-medium">IMBDn't</h1>
+          <h1 class="uk-navbar-item uk-heading-medium uk-logo uk-light"><strong>IMBDn't</strong></h1>
         </div>
         <!-- Menú Hamburguesa -->
         <div class="uk-navbar-right">
           <button class="uk-navbar-toggle uk-background-secondary" uk-toggle="target: #offcanvas-nav">
             <span uk-navbar-toggle-icon></span>
-            <span class="uk-margin-small-left">Menú</span>
+            <span class="uk-margin-small-left uk-light">Menú</span>
           </button>
         </div>
       </nav>
@@ -50,6 +50,8 @@
     <main class="uk-container uk-margin-top">
       <!-- Aquí se mostrará el gráfico de barras -->
       <div id="barChart" style="width: 100%; height: 600px"></div>
+      <div id="moviesOfYear" class="uk-margin-top"></div>
+
     </main>
 
     <!-- Enlace a los scripts de UIKit -->

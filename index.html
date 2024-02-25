@@ -5,29 +5,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>IMBDn't</title>
     <!-- Enlaces a los estilos de UIKit -->
-     <link rel="icon" href="img/logo.png">
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.7.3/css/uikit.min.css"
     />
+    <link rel="stylesheet" href="styles.css">
   </head>
-  <body>
+  <body class="uk-background-secondary">
     <!-- Cabecera -->
-    <header class="uk-background-primary uk-light" uk-sticky>
+    <header class="uk-background-primary uk-background-secondary" uk-sticky>
       <nav class="uk-navbar">
         <!-- Logo -->
         <div class="uk-navbar-left">
-          <a class="uk-navbar-item uk-logo" href="img/logo.png">Logo</a>
+          <a href="index.html" class="uk-navbar-item uk-logo"><img src="img/logo.png" width="100px" alt=""></a>
         </div>
         <!-- Título -->
         <div class="uk-navbar-center">
-          <h1 class="uk-navbar-item uk-heading-medium">IMBDn't</h1>
+          <h1 class="uk-navbar-item uk-heading-medium uk-logo uk-light"><strong>IMBDn't</strong></h1>
         </div>
         <!-- Menú Hamburguesa -->
         <div class="uk-navbar-right">
-          <button class="uk-navbar-toggle" uk-toggle="target: #offcanvas-nav">
+          <button class="uk-navbar-toggle uk-background-secondary" uk-toggle="target: #offcanvas-nav">
             <span uk-navbar-toggle-icon></span>
-            <span class="uk-margin-small-left">Menú</span>
+            <span class="uk-margin-small-left uk-light">Menú</span>
           </button>
         </div>
       </nav>
@@ -38,7 +38,7 @@
       <div class="uk-offcanvas-bar uk-background-secondary">
         <button class="uk-offcanvas-close" type="button" uk-close></button>
         <!-- Lista de opciones del menú -->
-        <ul class="uk-nav uk-nav-primary">
+        <ul class="uk-nav uk-nav-primary uk-light">
           <li><a href="#peliculas">Lista de Películas</a></li>
           <li><a href="barraGrafica.html">Gráfico de Barras</a></li>
           <li><a href="tartaGrafica.html">Gráfico de Tarta</a></li>

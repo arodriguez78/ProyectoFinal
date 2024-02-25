@@ -1,0 +1,46 @@
+/* Estilo para la tarjeta de película */
+.uk-card.movie-card {
+    transition: transform 0.3s ease; /* Agregar una transición suave al cambiar el tamaño */
+    cursor: pointer; /* Cambiar el cursor a un puntero cuando se pasa sobre la tarjeta */
+}
+
+/* Agregar una animación cuando el cursor se coloca sobre la tarjeta */
+.uk-card.movie-card:hover {
+    transform: scale(1.05); /* Aumentar el tamaño de la tarjeta */
+}
+
+
+/* En tu archivo de estilos (styles.css) o en el mismo HTML */
+#moviesContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* Estilos para las cards de películas */
+.uk-card-default {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Efecto de hover */
+.uk-card-default:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+}
+
+#moviesOfYear {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around; /* Opcional: distribuir el espacio entre las tarjetas */
+}
+
+#moviesOfYear .uk-card {
+    width: 80%; /* Ancho fijo de las tarjetas */
+    height: auto; /* Altura automática basada en el contenido */
+    margin-bottom: 20px; /* Espacio entre las tarjetas */
+}
+
+  
+  
