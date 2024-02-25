@@ -42,5 +42,18 @@
     margin-bottom: 20px; /* Espacio entre las tarjetas */
 }
 
-  
-  
+/* Estilo personalizado para el botón del menú hamburguesa */
+.custom-menu-button {
+    background-color: #222222; /* Color de fondo */
+    color: #fff; /* Color del texto */
+    border: none; /* Eliminar borde */
+    padding: 8px 15px; /* Espaciado interno */
+    font-size: 16px; /* Tamaño de fuente */
+    cursor: pointer; /* Cambiar el cursor al pasar sobre el botón */
+    transition: background-color 0.3s ease; /* Transición suave al cambiar el color de fondo */
+}
+
+.custom-menu-button:hover {
+    background-color: #DBA506; /* Cambiar color de fondo al pasar el cursor */
+}
+

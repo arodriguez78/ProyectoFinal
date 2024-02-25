@@ -5,7 +5,6 @@ let movieData;
 const moviesContainer = document.getElementById('moviesContainer');
 
 // Función para generar las cards de películas
-// Función para generar las cards de películas
 function generateMovieCards(year) {
     // Limpiar contenido anterior
     moviesContainer.innerHTML = '';
@@ -21,17 +20,29 @@ function generateMovieCards(year) {
 
         const card = document.createElement('div');
         card.classList.add('uk-card', 'uk-card-default', 'uk-card-body', 'uk-margin');
+        card.style.width = '100%';
+        card.style.maxWidth = '300px'; // Anchura máxima de la tarjeta
+        card.style.border = '1px solid #ccc';
+        card.style.borderRadius = '5px';
+        card.style.overflow = 'hidden'; // Ocultar contenido que exceda la tarjeta
+        card.style.transition = 'transform 0.3s ease-in-out'; // Animación al pasar el ratón por encima
 
         // Agregar imagen de la película
         const img = document.createElement('img');
         img.classList.add('uk-align-center');
         img.src = movie.Poster_Link;
         img.alt = movie.Series_Title;
+        img.style.width = '100%'; // Ajustar la imagen al ancho de la tarjeta
+        img.style.height = 'auto'; // Permitir que la altura se ajuste automáticamente
+        img.style.display = 'block'; // Evitar el espacio debajo de la imagen
         card.appendChild(img);
 
         // Agregar título de la película
         const title = document.createElement('h3');
         title.textContent = movie.Series_Title;
+        title.style.marginTop = '0';
+        title.style.marginBottom = '10px';
+        title.style.fontSize = '18px';
         card.appendChild(title);
 
         // Agregar evento de clic para mostrar la información completa de la película
@@ -50,6 +61,17 @@ function generateMovieCards(year) {
                     <button class="uk-button uk-button-default uk-modal-close" type="button">Cerrar</button>
                 </div>
             `).show();
+        });
+
+        // Estilos al pasar el ratón por encima
+        card.addEventListener('mouseenter', () => {
+            card.style.transform = 'translateY(-5px)'; // Mover ligeramente hacia arriba
+            card.style.boxShadow = '0px 5px 15px rgba(0, 0, 0, 0.1)'; // Sombra
+        });
+
+        card.addEventListener('mouseleave', () => {
+            card.style.transform = 'translateY(0)'; // Volver a la posición original
+            card.style.boxShadow = 'none'; // Quitar la sombra
         });
 
         // Agregar la card al contenedor de películas
